@@ -19,7 +19,10 @@ public:
 	//constructor
 	URAbilityTeleport();
 
+	//teleport distance
+	float TeleportDistance;
+
 	//override ActivateAbility() from parent class - calls CommitAbility() and EndAbility()
-	//virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
+	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 	
 };

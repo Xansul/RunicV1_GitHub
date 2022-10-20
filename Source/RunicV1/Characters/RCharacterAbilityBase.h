@@ -55,6 +55,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Shield")
 	void ShieldCheck(AActor* DamageSource, float ShieldTimer, float BaseDamage);
 
+	//Particle system used for teleport effect
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Teleport")
+	UParticleSystem* TeleportEffect;
+
 protected:
 
 	UPROPERTY(BlueprintReadOnly)
