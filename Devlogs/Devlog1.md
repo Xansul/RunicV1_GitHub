@@ -1,0 +1,16 @@
+# RunicV1 Devlog 1
+
+
+Welcome to the first Devlog for Runic.
+
+The project is rather simple right now, most of the time up to this point has been spent learning and building the base of the game's functionality, mainly the ability system. The project consists of a few main goals, one of which is a complex magic system. There is currently a decent start to this objective, due to implementation of Epic's Gameplay Ability System plugin. This has been a very valuable tool to use, though it has taken some time to understand and code with. I will give a brief breakdown of the progress so far.
+
+Let's start with the class hierarchy. All character classes are derived from `RCharacterBaseNew`, which has just basic `Character` properties/functions, as well as basic death functions. This class does not implement anything from the Ability System plugin, as there may be times where it will not be preferable to have all characters using an AbilitySystemComponent (such as in scenarios with large amounts of AI). Basic ability functionality first shows up in the next class, `RCharacterAbilityBase`, where the `IAbilitySystemInterface` is implementated. Any character using an ASC for abilities will inherit from this class. Some basic setup for common abilities is done through this class as well. Lastly, there are the `RCharacterPlayerNew` and `RCharacterAbilityAIBase` classes, which represent the player character and base AI. These also implement and initialize the attribute set `RAttributeSetPlayer`, which despite the poorly named class, is the base attribute set for all characters using an ASC.
+
+There are currently only 1 or 2 abilities, and though there isn't much to show at the moment, the basic setup for adding many abilities is mostly there. All abilities will derive from `RGameplayAbilityBase`, which has some basic properties for ability costs and inputIDs. Gameplay effects will use a MMC, such as `RAbilityCostMMC`, to pull and use the cost defined in the ability itself. Projectile abilities have some extra logic, and as such they will all derive from the `RAbilityProjectileBase` class, which has several variables exposed on spawn that allow a Gameplay Ability to pass along Gameplay Effect information to the target of the projectile.
+
+One of the main parts of the combat mechanics planned for Runic include shielding that can both influence the amount of damage received from attacks, as well as possible regen of mana (or Flow, as it is called in-game). This is all determined by the timing of shield blocks. If the character times the shield well, and activates it right before an attack hits, demage will be negated and they will have some flow returned. This is meant to be used regularly, as flow regenerates only very slowly. If the timing is poor, only some damage will be negated, and no flow will be returned. The logic for all of this currently resides in `RCharacterAbilityBase`, however I plan to move any logic that influences attribute change to the `RAtttributeSetPlayer` class or its derived classes.
+
+That's the majority of the current logic, though much of the visible aspects are implemented mainly in blueprints at this time, along with other miscellaneous parts of the project. These other parts include things such as basic Animation Blueprints and AI.
+
+Thanks for stopping by, more updates to come soon.
