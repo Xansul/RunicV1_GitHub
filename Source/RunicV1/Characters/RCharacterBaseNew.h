@@ -29,7 +29,7 @@ public:
 	//Check if character is alive - meant to be overriden
 	virtual bool IsAlive();
 
-	//Death function
-	void Death(ARCharacterBaseNew* Character);
+	//Death function - meant to be overriden (add loose gameplay tag upon death)
+	virtual void Death(ARCharacterBaseNew* Character);
 
 };

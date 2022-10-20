@@ -130,3 +130,21 @@ void ARCharacterAbilityBase::ShieldCheck(AActor* DamageSource, float ShieldTimer
 		AbilitySystemComponent->ApplyGameplayEffectToSelf(NewEffect, 0.0f, AbilitySystemComponent->MakeEffectContext());
 	}
 }
+
+//death function - simulate physics and add Dead tag
+void ARCharacterAbilityBase::Death(ARCharacterBaseNew* Character)
+{
+	//get all skeletal mesh components
+	TArray<USkeletalMeshComponent*> SkeletalMeshComps;
+	Character->GetComponents<USkeletalMeshComponent>(SkeletalMeshComps);
+
+	if (!SkeletalMeshComps.IsEmpty())
+	{
+		for (auto SkeletalMeshes : SkeletalMeshComps)
+		{
+			SkeletalMeshes->SetSimulatePhysics(true);
+		}
+	}
+
+	AbilitySystemComponent->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag(FName("State.Dead")));
+}

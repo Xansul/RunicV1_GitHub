@@ -59,6 +59,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Teleport")
 	UParticleSystem* TeleportEffect;
 
+	virtual void Death(ARCharacterBaseNew* Character) override;
+
 protected:
 
 	UPROPERTY(BlueprintReadOnly)
