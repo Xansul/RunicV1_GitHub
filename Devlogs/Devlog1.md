@@ -14,3 +14,5 @@ One of the main parts of the combat mechanics planned for Runic include shieldin
 That's the majority of the current logic, though much of the visible aspects are implemented mainly in blueprints at this time, along with other miscellaneous parts of the project. These other parts include things such as basic Animation Blueprints and AI.
 
 Thanks for stopping by, more updates to come soon.
+
+NOTE: Huge thanks to Tranek's GASDocumentation and GASShooter repos/projects, they have been incredibly helpful for learning the basics of the plugin.
