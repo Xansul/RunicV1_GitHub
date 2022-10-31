@@ -11,9 +11,11 @@ Some short vidoes showing current progress have been included with this Devlog. 
 
 Basic combat:
 https://user-images.githubusercontent.com/89817267/197058895-e1131bf5-0fbc-4e35-824b-bdefe61bf25d.mp4
+(`RunicV1_Devlog2_CombatBasic.mp4` in repo)
 
 Combat with more enemies:
 https://user-images.githubusercontent.com/89817267/197059103-52248015-e000-4724-aafd-25827fb88da9.mp4
+(`RunicV1_Devlog2_CombatFull.mp4` in repo)
 
 
 Thanks for stopping by, more updates to follow.
